@@ -1,6 +1,6 @@
 
 // MongoDB
-const mongo = require("mongodb").MongoClient;
+const MongoClient = require("mongodb").MongoClient;
 const url =  "mongodb://localhost:27017/chat";
 
 const express = require('express');
@@ -89,6 +89,18 @@ app.use((err, req, res, next) => {
         ]
     });
 });
+
+
+async function findInCollection(url, colName, criteria, projection, limit) {
+    const client  = await MongoClient.connect(url);
+    const db = await client.db();
+    const col = await db.collection(colName);
+    const res = await col.find(criteria, projection).limit(limit).toArray();
+
+    await client.close();
+
+    return res;
+}
 
 
 
