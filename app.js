@@ -8,10 +8,10 @@ const app = express();
 
 //Nytt
 const bodyParser = require('body-parser');
-const cors = require('cors');
+// const cors = require('cors');
 // const stuff = require('./models/stuff.js');
 
-app.use(cors());
+// app.use(cors());
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
