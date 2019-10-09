@@ -115,7 +115,7 @@ const server = app.listen(3000, function() {
 const io = require('socket.io')(server);
 
 //Nytillagt
-io.origins(['https://me-app.dreamsofliden.me:443']);
+// io.origins(['https://me-app.dreamsofliden.me:443']);
 // io.origins(['localhost:3000']);
 
 
