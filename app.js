@@ -3,6 +3,7 @@ var http = require('http').Server(app);
 const io = require('socket.io')(http);
 const stock = require("./stock.js");
 
+
 var apple = {
     name: "Äpple",
     rate: 1.002,
